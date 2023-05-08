@@ -6,6 +6,7 @@ from data_intro import run_dataIntro
 from eda.eda import run_eda
 from stats import run_stat
 from ml import run_ml
+from home import run_home
 
 def main():
     with st.sidebar:
@@ -13,7 +14,9 @@ def main():
                 icons=['house', 'card-checklist', 'card-checklist', 'bar-chart', 'clipboard-data', 'clipboard-data'],
                 menu_icon="cast", default_index=1, orientation = 'vertical', key='main_option')
 
-    if selected == 'Description':
+    if selected == 'Home':
+        run_home()
+    elif selected == 'Description':
         run_description()
     elif selected == 'Data':
         run_dataIntro()
