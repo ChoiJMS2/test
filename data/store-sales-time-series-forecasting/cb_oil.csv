@@ -1,0 +1,5 @@
+Table name(Eng.),,oil,,Table name(Kor.),,,유가 데이터,
+row_count,,1218,,column_count,,,2,
+Column name(Eng.),Column name(Kor.),Column Explain,Data Type,Null,Arrange,,etc.,
+data,날짜,,object,Not Null,2013-01-01 ~ 2017-08-31,,,
+dcoilwtico,유가,,float64,43 Null,26.19 ~ 110.62,,,
