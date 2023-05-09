@@ -16,7 +16,7 @@ def run_dataIntro():
                 "- **sales** gives the total sales for a product family at a particular store at a given date. Fractional values are possible since products can be sold in fractional units (1.5 kg of cheese, for instance, as opposed to 1 bag of chips). \n"
                 "- **onpromotion** gives the total number of items in a product family that were being promoted at a store at a given date. \n")
     img1 = Image.open("img/cb_train.PNG")
-    st.image(img1, width=700, height=500)
+    st.image(img1, width=500)
     st.markdown("#### :clipboard: stores.csv \n"
                 "- 	Store metadata, including **city**, **state**, **type**, and **cluster**. \n"
                 "- **cluster** is a grouping of similar stores \n")
