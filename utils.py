@@ -12,13 +12,8 @@ def load_data():
     oil = pd.read_csv(comp_dir / 'oil.csv')
     transactions = pd.read_csv(comp_dir / 'transactions.csv')
     holidays_events = pd.read_csv(comp_dir / 'holidays_events.csv')
-    bk_holidays = pd.read_csv(comp_dir / 'cb_holidays.csv')
-    bk_oil = pd.read_csv(comp_dir / 'cb_oil.csv')
-    bk_stores = pd.read_csv(comp_dir / 'cb_stores.csv')
-    bk_train = pd.read_csv(comp_dir / 'cb_train.csv')
-    bk_transactions = pd.read_csv(comp_dir / 'cb_transaction.csv')
 
-    return train, stores, oil, transactions, holidays_events, bk_holidays, bk_oil, bk_stores, bk_train, bk_transactions
+    return train, stores, oil, transactions, holidays_events
 
 
 # Date Selection

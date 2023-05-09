@@ -1,6 +1,0 @@
-Table name(Eng.),,transations,,Table name(Kor.),,,거래량,
-row_count,,83488,,column_count,,,3,
-Column name(Eng.),Column name(Kor.),Column Explain,Data Type,Null,Arrange,,etc.,
-date,날짜,,object,Not Null,2013-01-01 ~ 2017-08-15,,,
-store_nbr,점포 번호,,int64,Not Null,1 ~ 54,,,
-transactions,거래량,영수증 발행 건수,int64,Not Null,5 ~ 8539,,,

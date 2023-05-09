@@ -1,8 +1,0 @@
-Table name(Eng.),,stores,,Table name(Kor.),,,점포 데이터,
-row_count,,54,,column_count,,,5,
-Column name(Eng.),Column name(Kor.),Column Explain,Data Type,Null,Arrange,,etc.,
-store_nbr,점포 번호,,int64,Not Null,1 ~ 54,,,
-city,도시,,object64,Not Null,,,,
-state,주,,object64,Not Null,,,,
-type,타입,점포 타입,object64,Not Null,A ~ E,,,
-cluster,유사 상점,유사 상점 그룹화,int64,Not Null,1 ~ 17,,,
