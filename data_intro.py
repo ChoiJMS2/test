@@ -55,7 +55,7 @@ def show_data(train, stores, oil, transactions, holidays_events):
             pr = transactions_sample.profile_report()
             st_profile_report(pr)
 
-def run_eda():
+def run_data():
     train, stores, oil, transactions, holidays_events = load_data()
 
     submenu = st.sidebar.selectbox("Menu", ['Description', 'Show Data'])

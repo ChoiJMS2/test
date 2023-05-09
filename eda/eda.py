@@ -13,7 +13,6 @@ from utils import date_select, load_data
 import pandas_profiling
 import streamlit as st
 
-from streamlit_pandas_profiling import st_profile_report
 from eda.family_eda import run_Show
 from eda.earthquake_sales import total_Sales
 from eda.oil import run_oil_sales
