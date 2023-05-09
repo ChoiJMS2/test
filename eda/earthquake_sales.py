@@ -18,10 +18,10 @@ def total_Sales(train, stores):
     """, unsafe_allow_html=True)
     st.markdown("""
      Interpretation:\n\n
-     Overall, I see an uptrend in total sales across the country since 2013.\n\n
-     Let's check why there are those super deep valleys near many year's end.\n\n
-     My guess now is that all the shop are closed at the New Year or New Year Eve for holiday so there is no sales.\n\n
-     I will reconfirm this again at the holiday analyses.\n\n
+     Total sales from 2015 to 2016 are showing a slight increase with a certain pattern of repetition.\n\n
+     Also, there is a significant decrease(deep valley) in sales at the end of the year or the beginning of the year.\n\n
+     It is estimated that all stores are closed on New Year's holidays or New Year's Eve, so there are no sales.\n\n
+
      Noted that the earthquake marked with the red dotted band seems to boost the sales few days after.""")
     # 데이터 타입 변환
     train.onpromotion = train.onpromotion.astype("float16")
@@ -41,9 +41,8 @@ def total_Sales(train, stores):
     plt.xticks(rotation=70)
     st.pyplot(fig)
     st.markdown("""
-      - The earthquake hit the 16th April 2016. \n
-     + One month onwards from that date we can see a slight increase in sales. \n
-     + After the earthquake there were more days off than usual.
+      - The earthquake occurred on April 16, 2016, and several aftershocks occurred. \n
+        + You can see a sharp increase in sales in stores in areas affected by the earthquake or in areas where you felt a great deal of shaking.
       """)
     st.markdown("\n")
     # 각 스토어의 일일 총 판매량 딕셔너리로 만들기
