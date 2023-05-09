@@ -21,33 +21,7 @@ from utils import load_data
 
 
 @st.cache_resource(experimental_allow_widgets=True)
-def show_data(train, stores, oil, transactions, holidays_events):
-    st.markdown("## Data Preview")
-    sample_ratio = st.sidebar.slider('Sample Ratio (0~1)', min_value=0.1, max_value=1.0, step=0.1)
-    tab1, tab2, tab3, tab4 = st.tabs(['train', 'stores', 'oil', 'transactions'])
 
-    with tab1:
-        with st.expander("Train Data"):
-            train_sample = train.sample(frac=sample_ratio)
-            pr = train_sample.profile_report()
-            st_profile_report(pr)
-    with tab2:
-        with st.expander("Stores Data"):
-            stores_sample = stores.sample(frac=sample_ratio)
-            pr = stores_sample.profile_report()
-            st_profile_report(pr)
-
-    with tab3:
-        with st.expander("Oil Data"):
-            oil_sample = oil.sample(frac=sample_ratio)
-            pr = oil_sample.profile_report()
-            st_profile_report(pr)
-
-    with tab4:
-        with st.expander("Transactions Data"):
-            transactions_sample = transactions.sample(frac=sample_ratio)
-            pr = transactions_sample.profile_report()
-            st_profile_report(pr)
 
 
 def show_chart(train, stores, oil, transactions, holidays_events):
@@ -201,10 +175,8 @@ def show_chart(train, stores, oil, transactions, holidays_events):
 def run_eda():
     train, stores, oil, transactions, holidays_events = load_data()
 
-    submenu = st.sidebar.selectbox("Menu", ['Show Data', 'Charts', 'Family EDA', 'Earthquake and Sales', 'Oil and Sales'])
-    if submenu == 'Show Data':
-        show_data(train, stores, oil, transactions, holidays_events)
-    elif submenu == 'Charts':
+    submenu = st.sidebar.selectbox("Menu", [ 'Charts', 'Family EDA', 'Earthquake and Sales', 'Oil and Sales'])
+    if submenu == 'Charts':
         show_chart(train, stores, oil, transactions, holidays_events)
         st.caption("Code From : [Time Series Forecasting Tutorial](https://www.kaggle.com/code/javigallego/time-series-forecasting-tutorial)")
     elif submenu == 'Family EDA':
