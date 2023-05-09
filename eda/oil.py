@@ -43,14 +43,14 @@ def run_oil_sales(train, stores, oil, transactions):
     # date 컬럼과 재구성한 컬럼들(value)과 Legend 컬럼(dcoilwtico)으로 구성된 데이터프레임 p 생성
     p = oil.melt(id_vars=['date'] + list(oil.keys()[5:]), var_name='Legend')
 
-    st.markdown("-There are some missing data points in the daily oil data as you can see below.\n\n"
-                "-You can treat the data by using various imputation methods. However,\n\n"
-                "-I chose a simple solution for that. Linear Interpolation is suitable for this time serie.\n\n"
-                "-You can see the trend and predict missing data points,\n\n"
-                "-when you look at a time serie plot of oil price.")
+    st.markdown("""
+        - Higher oil prices tend to make production more expensive for businesses, just as they make it more expensive for households to do the things they normally do. 
+        It turns out that oil and gasoline prices are indeed very closely related. 
+        At a consumer level, lower oil prices means more purchasing power for the customers. \n
+        """)
     # p 데이터프레임을 Legend 컬럼(dcoilwtico)을 기준으로 내림차순 정렬하고, date 컬럼을 기준으로 오름차순 정렬
     fig = px.line(p.sort_values(["Legend", "date"], ascending=[False, True]), x='date', y='value', color='Legend',
-            title="일일 석유 가격")
+            title="Daily Oil Price")
     st.plotly_chart(fig)
 
     # 사용자 정의 함수 oil_corr : 일일 석유 가격과 다른 변수들간의 스피어만 상관계수를 계산하여 출력
@@ -63,7 +63,11 @@ def run_oil_sales(train, stores, oil, transactions):
     print(temp.drop(["store_nbr", "dcoilwtico"], axis=1).corr("spearman").dcoilwtico_interpolated.loc[
               ["sales", "transactions"]],
           "\n")  # 계산한 상관계수 중 dcoilwtico_interpolated 컬럼과 sales, transactions 컬럼의 상관계수를 출력
-
+    st.markdown("""
+       - This explains why there's an increase in average sales since mid-2015. \n
+       - Oil prices will be used as a variable for training.
+       """)
+    st.markdown("\n\n")
     # 일일 석유 가격과 거래량, 일일 석유 가격과 매출 간의 상관관계 시각화
     fig, axes = plt.subplots(1, 2, figsize=(15, 5))  # 그래프를 1행 2열로 배치, 크기를 (15,5). fig는 전체 그래프를 의미, axes는 각 그래프를 의미
     temp.plot.scatter(x="dcoilwtico_interpolated", y="transactions", ax=axes[
@@ -72,17 +76,13 @@ def run_oil_sales(train, stores, oil, transactions):
     axes[0].set_title('Daily oil price & Transactions', fontsize=15)  # 일일 석유 가격과 거래량
     axes[1].set_title('Daily Oil Price & Sales', fontsize=15);  # 일일 석유 가격과 매출
     st.pyplot(fig)
-    st.markdown(
-        "- I said above that Ecuador is an oil-dependent country, is that true? Can we really tell by looking at the data?\n\n"
-
-        "- First,let's look at the correlation between sales and volume.\n\n"
-        "- The correlation value is not strong, but the sign of sales is negative.\n\n "
-        "- Maybe we can find a clue here.\n\n"
-        "- Logically, if the daily oil price is high,\n\n"
-        "- we would expect that the Ecuadorian economy is not doing well,\n\n"
-        "- so the price of the product will increase and sales will decrease.\n\n"
-        "- There is a negative relationship here.\n\n"
-        "- Translated with www.DeepL.com/Translator (free version)")
+    st.markdown("""
+    - Ecuador is an oil-dependent country. 
+- Let's look at the correlation between sales and volume.
+- The correlation value is not strong, but the sign of sales is negative. 
+- If the daily oil price is high we would expect that the Ecuadorian economy is not doing well.
+- So the price of the product will increase and sales will decrease. There is a negative relationship here.
+    """)
 
     # 사용자 정의 함수 oil_fs : 일일 유가가 제품의 판매량에 영향을 미치는지, 어느 정도의 영향을 미치는지 확인
 
@@ -129,11 +129,16 @@ def run_oil_sales(train, stores, oil, transactions):
     plt.tight_layout(pad=5)
     plt.suptitle("Daily Oil Product & Total Family Sales \n", fontsize=20);  # 일일 석유 제품 & 모든 제품군 판매량
     st.pyplot(fig)
-    st.markdown("- You should never decide what you will do by looking at a graph or result! You are supposed to change your view and define new hypotheses.\n\n"
-                "- We would have been wrong if we had looked at some simple outputs just like above and we had said that there is no relationship with oil prices and let's not use oil price data.\n\n"
-                "- All right! We are aware of analyzing deeply now.\n\n"
-                "- Let's draw a scatter plot but let's pay attention for product families this time.\n\n"
-                "- All of the plots almost contains same pattern. When daily oil price is under about 70, there are more sales in the data.\n\n"
-                "- There are 2 cluster here. They are over 70 and under 70. It seems pretty understandable actually.\n\n"
-                "- We are in a good way I think. What do you think? \n\n"
-                "- Just now, we couldn't see a pattern for daily oil price, but now we extracted a new pattern from it.")
+    st.markdown(""" - You should never decide what you will do by looking at a graph or result. 
+    You are supposed to change your view and define new hypotheses.
+  We would have been wrong if we had looked at some simple outputs just like above 
+  and we had said that there is no relationship with oil prices and let's not use oil price data. \n\n 
+
+- Let's draw a scatter plot but let's pay attention for product families this time.  
+All of the plots almost contains same pattern. 
+When daily oil price is under about 70, there are more sales in the data. \n\n
+
+- There are 2 cluster here. 
+They are over 70 and under 70. 
+It seems pretty understandable actually. 
+We couldn't see a pattern for daily oil price, but now we extracted a new pattern from it.""")
