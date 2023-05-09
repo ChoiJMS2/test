@@ -9,23 +9,11 @@ def run_home():
     st.image(img, width=500)
 
     st.markdown("<h1 style='color: red;'>Store Sales - Time Series Forecasting</h1>", unsafe_allow_html=True)
-    data = {'members': ['Jeong-An Choi', 'Jeong-An Choi',
-                        'Jae-Myoung Choi', 'Jae-Myoung Choi',
-                        'Yong-Seok Kwon', 'Yong-Seok Kwon',
-                        'Yong-Jun Yoon', 'Yong-Jun Yoon',
-                        'Geon-Yong Lee', 'Geon-Yong Lee',
-                        'Kyung-Cheol Lee', 'Kyung-Cheol Lee'],
-            'Skills': ['Analysis, Planning', 'Analysis, Planning',
-                       'Analysis, Preprocessing', 'Analysis, Preprocessing',
-                       'Analysis, Dashboard', 'Analysis, Dashboard',
-                       'Dashboard, PPT',  'Dashboard, PPT',
-                       'Research,Dashboard', 'Research,Dashboard',
-                       '', ''],
-            'Git or Blog': ['','',
-                            'https://github.com/ChoiJMS2', 'https://james-choi88.tistory.com/',
-                            'https://github.com/MaestroYongseok', 'https://blog.naver.com/maestrokwon78',
-                            '', '',
-                            'https://github.com/leek1111', 'https://blog.naver.com/lgy2233', '', '']}
+    data = {'members': ['Jeong-An Choi', 'Jae-Myoung Choi', 'Yong-Seok Kwon', 'Yong-Jun Yoon', 'Geon-Yong Lee',
+                        'Kyung-Cheol Lee'],
+            'Skills': ['Analysis, Planning', 'Analysis, Preprocessing', 'Analysis, Dashboard', 'Dashboard, PPT',
+                       'Research,Dashboard', '', ],
+            'Git or Blog': ['', 'https://github.com/ChoiJMS2 \n https://james-choi88.tistory.com/', '', '', 'https://github.com/leek1111 \n https://blog.naver.com/lgy2233', '']}
     df = pd.DataFrame(data).set_index("members")
     st.table(df)
 
