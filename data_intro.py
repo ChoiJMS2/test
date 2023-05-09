@@ -3,7 +3,8 @@ import streamlit as st
 from utils import date_select, load_data
 from streamlit_pandas_profiling import st_profile_report
 
-def run_dataIntro(bk_train, bk_stores, bk_oil, bk_holidays, bk_transactions):
+def run_dataIntro():
+    bk_train, bk_stores, bk_oil, bk_holidays, bk_transactions = load_data()
     st.markdown("## Data Description 	:open_file_folder: \n")
     st.markdown("- :point_right: In this competition, you will predict sales for the thousands of product families sold at Favorita stores located in Ecuador. The training data includes dates, store and product information, whether that item was being promoted, as well as the sales numbers. Additional files include supplementary information that may be useful in building your models. \n"
                 "###  🗃️ File Descriptions and Data Field Information \n"
@@ -64,10 +65,10 @@ def show_data(train, stores, oil, transactions, holidays_events):
             st_profile_report(pr)
 
 def run_data():
-    train, stores, oil, transactions, holidays_events, bk_train, bk_stores, bk_oil, bk_holidays, bk_transactions = load_data()
+    train, stores, oil, transactions, holidays_events = load_data()
 
     submenu = st.sidebar.selectbox("Menu", ['Description', 'Show Data'])
     if submenu == 'Description':
-        run_dataIntro(bk_train, bk_stores, bk_oil, bk_holidays, bk_transactions)
+        run_dataIntro()
     elif submenu == 'Show Data':
         show_data(train, stores, oil, transactions, holidays_events)
