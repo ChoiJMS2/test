@@ -13,7 +13,7 @@ def run_home():
                         'Kyung-Cheol Lee'],
             'Skills': ['Analysis, Planning', 'Analysis, Preprocessing', 'Analysis, Dashboard', 'Dashboard, PPT',
                        'Research,Dashboard', '', ],
-            'Git or Blog': st.markdown['', '[GitHub](https://james-choi88.tistory.com/)\n[Tistory](https://github.com/ChoiJMS2)', '', '', '', '']}
+            'Git or Blog': ['', '[GitHub](https://james-choi88.tistory.com/)\n[Tistory](https://github.com/ChoiJMS2)', '', '', '', '']}
     df = pd.DataFrame(data).set_index("members")
     st.table(df)
 
