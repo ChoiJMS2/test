@@ -9,11 +9,12 @@ def run_home():
     st.image(img, width=500)
 
     st.markdown("<h1 style='color: red;'>Store Sales - Time Series Forecasting</h1>", unsafe_allow_html=True)
-    data = {'members': ['Jung-An Choi', 'Jae-Myung Choi', 'Yong-Seok Kwon', 'Yong-Jun Yoon', 'Yong-Yong Lee',
+    data = {'members': ['Jeong-An Choi', 'Jae-Myoung Choi', 'Yong-Seok Kwon', 'Yong-Jun Yoon', 'Geon-Yong Lee',
                         'Kyung-Cheol Lee'],
             'Skills': ['Analysis, Planning', 'Analysis, Preprocessing', 'Analysis, Dashboard', 'Dashboard, PPT',
-                       'Research,Dashboard', '', ]}
-    df = pd.DataFrame(data)
+                       'Research,Dashboard', '', ],
+            'Git or Blog': ['', 'https://james-choi88.tistory.com/ \n https://github.com/ChoiJMS2', '', '', '', '']}
+    df = pd.DataFrame(data).set_index("members")
     st.table(df)
 
     st.markdown("### Analytic Language Tools")
