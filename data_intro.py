@@ -44,7 +44,7 @@ def run_dataIntro():
 def show_data(train, stores, oil, transactions, holidays_events):
     st.markdown("## Data Preview")
     sample_ratio = st.sidebar.slider('Sample Ratio (0~1)', min_value=0.1, max_value=1.0, step=0.1)
-    tab1, tab2, tab3, tab4 = st.tabs(['train', 'stores', 'oil', 'transactions'])
+    tab1, tab2, tab3, tab4, tab5 = st.tabs(['train', 'stores', 'oil', 'transactions', 'holidays_events'])
 
     with tab1:
         with st.expander("Train Data"):
@@ -67,6 +67,12 @@ def show_data(train, stores, oil, transactions, holidays_events):
         with st.expander("Transactions Data"):
             transactions_sample = transactions.sample(frac=sample_ratio)
             pr = transactions_sample.profile_report()
+            st_profile_report(pr)
+
+    with tab5:
+        with st.expander("holidays_events Data"):
+            holidays_events_sample = holidays_events.sample(frac=sample_ratio)
+            pr = holidays_events_sample.profile_report()
             st_profile_report(pr)
 
 def run_data():
