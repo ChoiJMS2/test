@@ -29,8 +29,7 @@ def run_home():
               'https://github.com/leek1111', 'https://blog.naver.com/lgy2233',
               '', '']]
 
-    df = pd.DataFrame(index=index)
-    df.index.names = columns
+    df = pd.DataFrame(index=index).index.names(columns)
     st.table(df)
 
     st.markdown("### Analytic Language Tools")
