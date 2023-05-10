@@ -31,7 +31,7 @@ def run_home():
 
     df = pd.DataFrame(index=index)
     df.index.names = columns
-    df
+    st.dataframe(df)
 
     st.markdown("### Analytic Language Tools")
     col1, col2, col3 = st.columns(3)
