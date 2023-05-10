@@ -9,7 +9,7 @@ def run_home():
     st.image(img)
 
     st.markdown("<h1 style='color: red;'>Store Sales - Time Series Forecasting</h1>", unsafe_allow_html=True)
-    st.markdown("Member|Skills|GitHub & Blog \n |:--:|:--:|:--:| \n |Jeong-An Choi|Analysis & Planning|| \n |Jae-Myoung Choi|Analysis & Preprocessing | Git : https://github.com/ChoiJMS2m & Blog : https://james-choi88.tistory.com| \n |Yong-Seok Kwon|Analysis & Dashboard|Git : https://github.com/MaestroYongseok & Blog : https://blog.naver.com/maestrokwon78| \n |Yong-Jun Yoon|Dashboard & PPT|| \n |Geon-Yong Lee|Research & Dashboard| Git : https://github.com/leek1111 & Blog : https://blog.naver.com/lgy2233| \n |Kyung-Cheol Lee|-|-|")
+    st.markdown("Member|Skills|GitHub & Blog \n |:--:|:--:|:--:| \n |Jeong-An Choi|Analysis & Planning|Git : https://github.com/CHOIJEONGAN & Blog : https://choi-the-programmer.tistory.com/| \n |Jae-Myoung Choi|Analysis & Preprocessing | Git : https://github.com/ChoiJMS2m & Blog : https://james-choi88.tistory.com| \n |Yong-Seok Kwon|Analysis & Dashboard|Git : https://github.com/MaestroYongseok & Blog : https://blog.naver.com/maestrokwon78| \n |Yong-Jun Yoon|Dashboard & PPT|Git : https://github.com/yunyj1998 & Blog : https://blog.naver.com/yunyj1998| \n |Geon-Yong Lee|Research & Dashboard| Git : https://github.com/leek1111 & Blog : https://blog.naver.com/lgy2233| \n |Kyung-Cheol Lee|-|-|")
 
     st.markdown("### Analytic Language Tools")
     col1, col2, col3 = st.columns(3)
@@ -41,8 +41,11 @@ def run_home():
         " - Ultimately providing actionable insights to help stores optimize operations and improve financial performance.")
 
     st.markdown("### Identify and forecast sales changes")
+    st.markdown(" - We chose :blue[earthquakes, regions, times, holidays, events, and oil prices] as variables for changes in sales. \n\n"
+                " - We will look at how sales change for each variable.")
 
     st.markdown("### Model the final forecast")
+    st.markdown(" - Regression analysis and time series analysis were used to determine the prediction model.")
     col1, col2 = st.columns(2)
     pass
 
