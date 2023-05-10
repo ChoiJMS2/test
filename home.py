@@ -6,46 +6,24 @@ import pandas as pd
 
 def run_home():
     img = Image.open("image/mak.png")
-    st.image(img, width=500)
+    st.image(img)
 
     st.markdown("<h1 style='color: red;'>Store Sales - Time Series Forecasting</h1>", unsafe_allow_html=True)
-    columns = ['Members', 'Skills', 'GitHub & Blog']
-    index = [['Jeong-An Choi', 'Jeong-An Choi',
-              'Jae-Myoung Choi', 'Jae-Myoung Choi',
-              'Yong-Seok Kwon', 'Yong-Seok Kwon',
-              'Yong-Jun Yoon', 'Yong-Jun Yoon',
-              'Geon-Yong Lee', 'Geon-Yong Lee',
-              'Kyung-Cheol Lee', 'Kyung-Cheol Lee'],
-             ['Analysis, Planning', 'Analysis, Planning',
-              'Analysis, Preprocessing', 'Analysis, Preprocessing',
-              'Analysis, Dashboard', 'Analysis, Dashboard',
-              'Dashboard, PPT', 'Dashboard, PPT',
-              'Research,Dashboard', 'Research,Dashboard',
-              '', ''],
-             ['', '',
-              'https://github.com/ChoiJMS2', 'https://james-choi88.tistory.com',
-              '', '',
-              '', '',
-              'https://github.com/leek1111', 'https://blog.naver.com/lgy2233',
-              '', '']]
-
-    df = pd.DataFrame(index=index)
-    df.index.names = columns
-    st.dataframe(df)
+    st.markdown("Member|Skills|GitHub & Blog \n |:--:|:--:|:--:| \n |Jeong-An Choi|Analysis & Planning|| \n |Jae-Myoung Choi|Analysis & Preprocessing | Git : https://github.com/ChoiJMS2m & Blog : https://james-choi88.tistory.com| \n |Yong-Seok Kwon|Analysis & Dashboard|Git : https://github.com/MaestroYongseok & Blog : https://blog.naver.com/maestrokwon78| \n |Yong-Jun Yoon|Dashboard & PPT|| \n |Geon-Yong Lee|Research & Dashboard| Git : https://github.com/leek1111 & Blog : https://blog.naver.com/lgy2233| \n |Kyung-Cheol Lee|-|-|")
 
     st.markdown("### Analytic Language Tools")
     col1, col2, col3 = st.columns(3)
     with col1:
         img1 = Image.open("image/st1.png")
-        st.image(img1, width=200)
+        st.image(img1, width=300)
 
     with col2:
         img2 = Image.open("image/py1.png")
-        st.image(img2, width=200)
+        st.image(img2, width=300)
 
     with col3:
         img3 = Image.open("image/py2.png")
-        st.image(img3, width=200)
+        st.image(img3, width=300)
 
     st.markdown("### Project Overview\n\n"
                 "- Use time series forecasting to predict store sales based on data from Corporación Favorita, a large grocery retailer based in Ecuador \n\n"

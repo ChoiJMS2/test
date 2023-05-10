@@ -9,6 +9,7 @@ from ml import run_ml
 from home import run_home
 
 def main():
+    st.set_page_config(layout="wide")
     with st.sidebar:
         selected = option_menu("Main Menu", ['Home', 'Description', 'Data', 'EDA', 'STAT', 'ML'],
                 icons=['house', 'card-checklist', 'card-checklist', 'bar-chart', 'clipboard-data', 'clipboard-data'],
